@@ -1,23 +1,17 @@
-import * as fs from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import data from '../cmudict/cmudict-0.7b';
 
 let dictionary;
 
 function loadDictionary() {
-    dictionary = {};
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = dirname(__filename);
-    const cmudictPath = join(__dirname, '../cmudict/cmudict-0.7b');
-    const data = fs.readFileSync(cmudictPath, 'utf8');
     const lines = data.split('\n');
+    dictionary = {};
 
     for (let line of lines) {
         const trimmedLine = line;
-        if (trimmedLine.startsWith(";;;")) {
+        if (trimmedLine.startsWith(';;;')) {
             continue;
         }
-        const [key, arpabet] = trimmedLine.split("  ");
+        const [key, arpabet] = trimmedLine.split('  ');
         if (arpabet) {
             dictionary[key] = arpabet.trim();
         }

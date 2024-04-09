@@ -1,29 +1,33 @@
 {
-  "name": "syllable-count-english",
-  "description": "Accurate syllable counter for English words",
-  "version": "1.0.7",
-  "type": "module",
-  "repository": "fresswolf/syllable-count-english",
-  "main": "src/index.js",
-  "types": "src/index.d.ts",
-  "scripts": {
-    "start": "node src/index.js",
-    "test": "node test/index.js"
-  },
-  "keywords": [
-    "syllables",
-    "syllable",
-    "rhyme",
-    "language",
-    "english",
-    "arpabet",
-    "dictionary",
-    "pronunciation",
-    "spelling"
-  ],
-  "author": "Andreas Siegrist <andreas.siegrist@namutec.com> (https://namutec.com)",
-  "license": "MIT",
-  "dependencies": {
-    "syllable": "^5.0.1"
-  }
+    "name": "syllable-count-english",
+    "description": "Accurate syllable counter for English words",
+    "version": "1.0.7",
+    "repository": "michaelsharman/syllable-count-english",
+    "main": "src/index.js",
+    "types": "src/index.d.ts",
+    "scripts": {
+        "dev": "npm install && webpack watch --mode development --devtool eval-source-map",
+        "start": "node src/index.js",
+        "test": "node test/index.js"
+    },
+    "keywords": [
+        "syllables",
+        "syllable",
+        "rhyme",
+        "language",
+        "english",
+        "arpabet",
+        "dictionary",
+        "pronunciation",
+        "spelling"
+    ],
+    "author": "Andreas Siegrist <andreas.siegrist@namutec.com> (https://namutec.com)",
+    "license": "MIT",
+    "dependencies": {
+        "syllable": "^5.0.1"
+    },
+    "devDependencies": {
+        "webpack": "^5.59.1",
+        "webpack-cli": "^4.9.1"
+    }
 }
